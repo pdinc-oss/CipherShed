@@ -36,6 +36,8 @@ void PrintChar (char c)
 	if (ScreenOutputDisabled)
 		return;
 
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		mov bx, 7
@@ -43,6 +45,7 @@ void PrintChar (char c)
 		mov ah, 0xe
 		int 0x10
 	}
+#endif
 }
 
 
@@ -51,6 +54,8 @@ void PrintCharAtCursor (char c)
 	if (ScreenOutputDisabled)
 		return;
 
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		mov bx, 7
@@ -59,6 +64,7 @@ void PrintCharAtCursor (char c)
 		mov ah, 0xa
 		int 0x10
 	}
+#endif
 }
 
 
@@ -85,11 +91,18 @@ void Print (uint32 number)
 		PrintChar (str[pos--]);
 }
 
+#ifdef __GNUC__
+#define uint64HighPart(x) (x>>32)
+#define uint64LowPart(x) (x&0xffFFffFF)
+#else
+#define uint64HighPart(x) (x.HighPart)
+#define uint64LowPart(x) (x.LowPart)
+#endif
 
 void Print (const uint64 &number)
 {
-	if (number.HighPart == 0)
-		Print (number.LowPart);
+	if (uint64HighPart(number) == 0)
+		Print (uint64LowPart(number));
 	else
 		PrintHex (number);
 }
@@ -118,8 +131,8 @@ void PrintHex (uint32 data)
 
 void PrintHex (const uint64 &data)
 {
-	PrintHex (data.HighPart);
-	PrintHex (data.LowPart);
+	PrintHex (uint64HighPart(data));
+	PrintHex (uint64LowPart(data));
 }
 
 void PrintRepeatedChar (char c, int n)
@@ -153,6 +166,8 @@ void InitVideoMode ()
 	if (ScreenOutputDisabled)
 		return;
 
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		// Text mode 80x25
@@ -163,6 +178,7 @@ void InitVideoMode ()
 		mov ax, 0x500
 		int 0x10
 	}
+#endif
 }
 
 
@@ -171,6 +187,8 @@ void ClearScreen ()
 	if (ScreenOutputDisabled)
 		return;
 
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		// White text on black
@@ -186,6 +204,7 @@ void ClearScreen ()
 		mov ah, 2
 		int 0x10
 	}
+#endif
 }
 
 
@@ -216,12 +235,15 @@ void PrintErrorNoEndl (const char *message)
 byte GetShiftFlags ()
 {
 	byte flags;
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		mov ah, 2
 		int 0x16
 		mov flags, al
 	}
+#endif
 
 	return flags;
 }
@@ -240,6 +262,8 @@ byte GetKeyboardChar (byte *scanCode)
 
 	byte asciiCode;
 	byte scan;
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		mov ah, 0
@@ -247,6 +271,7 @@ byte GetKeyboardChar (byte *scanCode)
 		mov asciiCode, al
 		mov scan, ah
 	}
+#endif
 	
 	if (scanCode)
 		*scanCode = scan;
@@ -258,6 +283,8 @@ byte GetKeyboardChar (byte *scanCode)
 bool IsKeyboardCharAvailable ()
 {
 	bool available = false;
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		mov ah, 1
@@ -266,6 +293,7 @@ bool IsKeyboardCharAvailable ()
 		mov available, true
 	not_avail:
 	}
+#endif
 
 	return available;
 }
@@ -286,6 +314,8 @@ bool EscKeyPressed ()
 
 void ClearBiosKeystrokeBuffer ()
 {
+#ifdef __GNUC__
+#else
 	__asm
 	{
 		push es
@@ -297,6 +327,7 @@ void ClearBiosKeystrokeBuffer ()
 		rep stosb
 		pop es
 	}
+#endif
 }
 
 

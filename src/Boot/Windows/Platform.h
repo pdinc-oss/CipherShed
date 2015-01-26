@@ -14,14 +14,21 @@
 #include "../../Common/Tcdefs.h"
 #include <memory.h>
 
+#ifndef CS_UNITTESTING
 typedef char bool;
+#endif
 #define false 0
 #define true 1
 
 #define nullptr 0
+#ifdef NULL
+#undef NULL
+#endif
 #define NULL 0
 
+#ifndef CS_UNITTESTING
 typedef UINT64_STRUCT uint64;
+#endif
 
 #define array_capacity(arr) (sizeof (arr) / sizeof ((arr)[0]))
 
@@ -85,7 +92,7 @@ struct Registers
 
 #pragma pack()
 
-
+#if !defined(__CYGWIN__)
 uint64 operator+ (const uint64 &a, const uint64 &b);
 uint64 operator+ (const uint64 &a, uint32 b);
 uint64 &operator+= (uint64 &a, const uint64 &b);
@@ -100,6 +107,7 @@ bool operator> (const uint64 &a, const uint64 &b);
 bool operator< (const uint64 &a, const uint64 &b);
 bool operator>= (const uint64 &a, const uint64 &b);
 bool operator<= (const uint64 &a, const uint64 &b);
+#endif
 
 void CopyMemory (void *source, uint16 destSegment, uint16 destOffset, uint16 blockSize);
 void CopyMemory (uint16 sourceSegment, uint16 sourceOffset, void *destination, uint16 blockSize);
