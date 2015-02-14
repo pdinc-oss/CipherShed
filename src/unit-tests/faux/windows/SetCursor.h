@@ -3,6 +3,15 @@
 
 #include "HCURSOR.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 HCURSOR SetCursor(HCURSOR hCursor);
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif

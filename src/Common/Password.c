@@ -154,6 +154,7 @@ void VerifyPasswordAndUpdate2 (HWND hwndDlg, HWND hButton, HWND hPassword,
 	if (szVerify != NULL)
 	{
 		len=strlenw(szTmp2);
+		// per gcov and http://stackoverflow.com/questions/23219614/why-gcc-4-1-gcov-reports-100-branch-coverage-and-newer-4-4-4-6-4-8-report eceptions should be "handled"
 		r=ConvertUTF16toUTF8s(szTmp2,len+1,(UTF8*)szVerify,sizeOfVerify,strictConversion);
 		if (r!=conversionOK) bEnable=FALSE;
 	}

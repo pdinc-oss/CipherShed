@@ -2,7 +2,7 @@
 CC = g++
 CommonSDIR = ../Common
 
-CFLAGS = -DCS_UNITTESTING -fprofile-arcs -ftest-coverage -I . -I ../../var/opt/cpptest-code/cpptest/src/ -lpthread -ldl
+CFLAGS = -g -DCS_UNITTESTING -fprofile-arcs -ftest-coverage -I . -I ../../var/opt/cpptest-code/cpptest/src/ -lpthread -ldl
 CXXFLAGS = $(CFLAGS)
 
 CPPFLAGS += -MD -MP
@@ -44,13 +44,11 @@ faux/windows/GetTokenInformation.c \
 faux/windows/GetVersionEx.c \
 faux/windows/IsUserAnAdmin.c \
 faux/windows/IsWellKnownSid.c \
-faux/windows/LoadCursor.c \
 faux/windows/LocalFree.c \
 faux/windows/MessageBox.c \
 faux/windows/OpenProcessToken.c \
 faux/windows/RegOpenKeyEx.c \
 faux/windows/RegisterClassEx.c \
-faux/windows/SetCursor.c \
 faux/windows/SetLayeredWindowAttributes.c \
 faux/windows/ShellNotifyIcon.c \
 faux/windows/ShowWindow.c \
@@ -126,11 +124,14 @@ faux/windows/GetFileTime.cpp \
 faux/windows/GetLastError.cpp \
 faux/windows/GetWindowText.cpp \
 faux/windows/GetWindowTextLength.cpp \
+faux/windows/LoadCursor.cpp \
 faux/windows/OutputDebugString.cpp \
 faux/windows/QueryDosDevice.cpp \
+faux/windows/SetCursor.cpp \
 faux/windows/SetFilePointer.cpp \
 faux/windows/SetFileTime.cpp \
 faux/windows/SetLastError.cpp \
+faux/windows/WideCharToMultiByte.cpp \
 faux/windows/_wcsicmp.cpp \
 faux/windows/swprintf_s.cpp \
 unittesting.cpp \

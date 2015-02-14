@@ -419,6 +419,10 @@
 						Name="lib"
 						>
 						<File
+							RelativePath=".\tests\lib\stringUtilTest.cpp"
+							>
+						</File>
+						<File
 							RelativePath=".\tests\lib\unicodeTest.cpp"
 							>
 						</File>
@@ -715,7 +719,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\faux\windows\LoadCursor.c"
+							RelativePath=".\faux\windows\LoadCursor.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -843,7 +847,7 @@
 							</FileConfiguration>
 						</File>
 						<File
-							RelativePath=".\faux\windows\SetCursor.c"
+							RelativePath=".\faux\windows\SetCursor.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"
@@ -957,6 +961,10 @@
 									CompileAsManaged="0"
 								/>
 							</FileConfiguration>
+						</File>
+						<File
+							RelativePath=".\faux\windows\WideCharToMultiByte.cpp"
+							>
 						</File>
 					</Filter>
 					<Filter

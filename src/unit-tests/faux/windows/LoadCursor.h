@@ -6,6 +6,10 @@
 #include "LPCSTR.h"
 #include "LPCWSTR.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 HCURSOR
 LoadCursorA(
     HINSTANCE hInstance,
@@ -15,6 +19,10 @@ HCURSOR
 LoadCursorW(
     HINSTANCE hInstance,
     LPCWSTR lpCursorName);
+
+#ifdef __cplusplus
+}
+#endif
 
 #ifdef UNICODE
 #define LoadCursor  LoadCursorW

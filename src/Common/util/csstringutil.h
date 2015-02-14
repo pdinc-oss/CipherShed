@@ -3,6 +3,10 @@
 
 #include "../Tcdefs.h"
 
+#ifdef CS_UNITTESTING
+#include "../../unit-tests/faux/windows/LPWSTR.h"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif

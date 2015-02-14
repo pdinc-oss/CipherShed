@@ -509,6 +509,110 @@ namespace CipherShed_Tests_Algo
 		}
 
 
+		TESTMETHOD
+		void testPasswordVerifyPasswordAndUpdateKeyFile()
+		{
+			fauxEnablableWidget few;
+			few.enabled=false;
+			HWND hwndDlg=NULL;
+			HWND hButton=&few;
+			fauxWindowText fwtPassword;
+			strcpyw(fwtPassword.buf.w,(WCHAR*)L"");
+			HWND hPassword=&fwtPassword;
+			fauxWindowText fwtVerify;
+			strcpyw(fwtVerify.buf.w,(WCHAR*)L"");
+			HWND hVerify=&fwtVerify;
+			char buf1[2048];
+			unsigned char *szPassword=(unsigned char *)buf1;
+			char buf2[2048];
+			char *szVerify=buf2;
+			BOOL keyFilesEnabled=true;
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, szPassword, sizeof(buf1), szVerify, sizeof(buf2), keyFilesEnabled);
+			TEST_ASSERT(few.enabled==TRUE);
+			TEST_ASSERT(0==strcmpwa(fwtPassword.buf.w,buf1));
+			TEST_ASSERT(0==strcmpwa(fwtVerify.buf.w,buf2));
+
+			keyFilesEnabled=false;
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, szPassword, sizeof(buf1), szVerify, sizeof(buf2), keyFilesEnabled);
+			TEST_ASSERT(few.enabled==FALSE);
+		}
+
+
+		/**
+			Run through the VerifyPasswordAndUpdate2 method, not returning the passwords.
+		*/
+		TESTMETHOD
+		void testPasswordVerifyPasswordAndUpdateNullReturnBuffers()
+		{
+			fauxEnablableWidget few;
+			few.enabled=false;
+			HWND hwndDlg=NULL;
+			HWND hButton=&few;
+			fauxWindowText fwtPassword;
+			strcpyw(fwtPassword.buf.w,(WCHAR*)L"");
+			HWND hPassword=&fwtPassword;
+			fauxWindowText fwtVerify;
+			strcpyw(fwtVerify.buf.w,(WCHAR*)L"");
+			HWND hVerify=&fwtVerify;
+			char buf1[2048];
+			unsigned char *szPassword=(unsigned char *)buf1;
+			char buf2[2048];
+			char *szVerify=buf2;
+			BOOL keyFilesEnabled=true;
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, NULL, 0, NULL, 0, keyFilesEnabled);
+			TEST_ASSERT(few.enabled==TRUE);
+		}
+
+		TESTMETHOD
+		void testPasswordVerifyPasswordAndUpdateReturnBuffersTooSmall()
+		{
+			fauxEnablableWidget few;
+			few.enabled=false;
+			HWND hwndDlg=NULL;
+			HWND hButton=&few;
+			fauxWindowText fwtPassword;
+			strcpyw(fwtPassword.buf.w,(WCHAR*)L"password");
+			HWND hPassword=&fwtPassword;
+			fauxWindowText fwtVerify;
+			strcpyw(fwtVerify.buf.w,(WCHAR*)L"password");
+			HWND hVerify=&fwtVerify;
+			char buf1[2048];
+			unsigned char *szPassword=(unsigned char *)buf1;
+			char buf2[2048];
+			char *szVerify=buf2;
+			BOOL keyFilesEnabled=false;
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, szPassword, sizeof(buf1), szVerify, 2, keyFilesEnabled);
+			TEST_ASSERT(few.enabled==FALSE);
+
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, szPassword, 2, szVerify, sizeof(buf2), keyFilesEnabled);
+			TEST_ASSERT(few.enabled==FALSE);
+
+			VerifyPasswordAndUpdate2(hwndDlg, hButton, hPassword, hVerify, szPassword, sizeof(buf1), szVerify, sizeof(buf2), keyFilesEnabled);
+			TEST_ASSERT(few.enabled==TRUE);
+
+		}
+
+		TESTMETHOD
+		void testPassword2()
+		{
+			char *lpszVolume=NULL;
+
+			Password mt={0,{0x00},{0,0,0}};
+			Password pwOld={1,{'A',0x00},{0,0,0}};
+			Password pwNew={1,{'B',0x00},{0,0,0}};
+
+			Password *oldPassword;
+			Password *newPassword;
+			int pkcs5;
+			HWND hwndDlg;
+			int res;
+			/*
+			res=ChangePwd(lpszVolume, &pwOld, &pwNew, pkcs5, hwndDlg);
+			*/
+			TEST_ASSERT(TRUE);
+		}
+
+
 
 
 		/**
@@ -529,9 +633,15 @@ namespace CipherShed_Tests_Algo
 			TEST_ADD(PasswordTest::testPasswordVerifyPasswordAndUpdateMTString);
 			TEST_ADD(PasswordTest::testPasswordVerifyPasswordAndUpdateMissmatch);
 
+			TEST_ADD(PasswordTest::testPasswordVerifyPasswordAndUpdateKeyFile);
+			TEST_ADD(PasswordTest::testPasswordVerifyPasswordAndUpdateNullReturnBuffers);
+			TEST_ADD(PasswordTest::testPasswordVerifyPasswordAndUpdateReturnBuffersTooSmall);
+
 			TEST_ADD(PasswordTest::testPasswordstrcmpw);
 
 			TEST_ADD(PasswordTest::testPasswordChangePwdMtPasswords);
+
+			TEST_ADD(PasswordTest::testPassword2);
 		}
 	};
 }
