@@ -8,19 +8,23 @@
 
 #ifndef TC_HEADER_Platform_Serializer
 #define TC_HEADER_Platform_Serializer
-
+/*
 #include "PlatformBase.h"
 #include "Buffer.h"
 #include "SharedPtr.h"
 #include "Stream.h"
 #include <list>
+*/
+
+#include <memory>
+//http://stackoverflow.com/questions/2918202/where-is-shared-ptr
 
 namespace CipherShed
 {
 	class Serializer
 	{
 	public:
-		Serializer (shared_ptr <Stream> stream) : DataStream (stream) { }
+		Serializer (std::tr1::shared_ptr <Stream> stream) : DataStream (stream) { }
 		virtual ~Serializer () { }
 
 		void Deserialize (const string &name, bool &data);
@@ -64,7 +68,7 @@ namespace CipherShed
 		void SerializeWString (const wstring &data);
 		void ValidateName (const string &name);
 
-		shared_ptr <Stream> DataStream;
+		std::tr1::shared_ptr <Stream> DataStream;
 
 	private:
 		Serializer (const Serializer &);

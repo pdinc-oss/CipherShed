@@ -1,20 +1,24 @@
 #include "csstringutil.h"
 
-
-#include "../../Platform/SystemException.h"
-#include "../../Platform/Exception.h"
+#include "../Tcdefs.h"
+#include <string>
 #include "../../Platform/ForEach.h"
-#include "memory.h"
-#include <string.h>
+#include "../../Platform/SystemException.h"
 
 #ifdef CS_UNITTESTING
 #include "../../unit-tests/faux/windows/CP_ACP.h"
 #include "../../unit-tests/faux/windows/MultiByteToWideChar.h"
 #include "../../unit-tests/faux/windows/WideCharToMultiByte.h"
 #include "../../unit-tests/faux/windows/_strupr.h"
-#include <string>
 #include <stdlib.h>
+#else
+#include <windows.h>
 #endif
+
+#include "memory.h"
+#include "arrays.h"
+/*
+*/
 
 using namespace CipherShed;
 
@@ -131,7 +135,7 @@ Why is this being used in a crypto program?
 */
 std::string ToUpperCase (const std::string &str)
 {
-	string u;
+	std::string u;
 	foreach (char c, str)
 	{
 		u += (char) toupper (c);
@@ -160,7 +164,7 @@ _strupr does an inplace replace of each char, this is bad mojo.
 */
 std::string StringToUpperCase (const std::string &str)
 {
-	string upperCase (str);
+	std::string upperCase (str);
 	_strupr ((char *) upperCase.c_str());
 	return upperCase;
 }

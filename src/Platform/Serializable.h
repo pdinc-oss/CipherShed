@@ -8,7 +8,7 @@
 
 #ifndef TC_HEADER_Platform_Serializable
 #define TC_HEADER_Platform_Serializable
-
+/*
 #include <stdexcept>
 #include "PlatformBase.h"
 using namespace std;
@@ -16,6 +16,12 @@ using namespace std;
 #include "Serializer.h"
 #include "SerializerFactory.h"
 #include <typeinfo>
+*/
+
+#include <memory>
+#include "Stream.h"
+#include <list>
+#include "Serializer.h"
 
 namespace CipherShed
 {
@@ -24,21 +30,21 @@ namespace CipherShed
 	public:
 		virtual ~Serializable () { }
 
-		virtual void Deserialize (shared_ptr <Stream> stream) = 0;
-		static string DeserializeHeader (shared_ptr <Stream> stream);
-		static Serializable *DeserializeNew (shared_ptr <Stream> stream);
+		virtual void Deserialize (std::tr1::shared_ptr <Stream> stream) = 0;
+		static string DeserializeHeader (std::tr1::shared_ptr <Stream> stream);
+		static Serializable *DeserializeNew (std::tr1::shared_ptr <Stream> stream);
 		
 		template <class T> 
-		static shared_ptr <T> DeserializeNew (shared_ptr <Stream> stream)
+		static std::tr1::shared_ptr <T> DeserializeNew (std::tr1::shared_ptr <Stream> stream)
 		{
-			shared_ptr <T> p (dynamic_cast <T *> (DeserializeNew (stream)));
+			std::tr1::shared_ptr <T> p (dynamic_cast <T *> (DeserializeNew (stream)));
 			if (!p)
 				throw std::runtime_error (SRC_POS);
 			return p;
 		}
 
 		template <class T> 
-		static void DeserializeList (shared_ptr <Stream> stream, list < shared_ptr <T> > &dataList)
+		static void DeserializeList (std::tr1::shared_ptr <Stream> stream, list < std::tr1::shared_ptr <T> > &dataList)
 		{
 			if (DeserializeHeader (stream) != string ("list<") + SerializerFactory::GetName (typeid (T)) + ">")
 				throw std::runtime_error (SRC_POS);
@@ -49,17 +55,17 @@ namespace CipherShed
 
 			for (size_t i = 0; i < listSize; i++)
 			{
-				shared_ptr <T> p (dynamic_cast <T *> (DeserializeNew (stream)));
+				std::tr1::shared_ptr <T> p (dynamic_cast <T *> (DeserializeNew (stream)));
 				if (!p)
 					throw std::runtime_error (SRC_POS);
 				dataList.push_back (p);
 			}
 		}
 
-		virtual void Serialize (shared_ptr <Stream> stream) const;
+		virtual void Serialize (std::tr1::shared_ptr <Stream> stream) const;
 
 		template <class T>
-		static void SerializeList (shared_ptr <Stream> stream, const list < shared_ptr <T> > &dataList)
+		static void SerializeList (std::tr1::shared_ptr <Stream> stream, const list < std::tr1::shared_ptr <T> > &dataList)
 		{
 			Serializer sr (stream);
 			SerializeHeader (sr, string ("list<") + SerializerFactory::GetName (typeid (T)) + ">");
@@ -78,7 +84,7 @@ namespace CipherShed
 
 #define TC_SERIALIZABLE(TYPE) \
 	static Serializable *GetNewSerializable () { return new TYPE(); } \
-	virtual void Deserialize (shared_ptr <Stream> stream); \
-	virtual void Serialize (shared_ptr <Stream> stream) const
+	virtual void Deserialize (std::tr1::shared_ptr <Stream> stream); \
+	virtual void Serialize (std::tr1::shared_ptr <Stream> stream) const
 
 #endif // TC_HEADER_Platform_Serializable

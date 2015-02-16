@@ -10,6 +10,7 @@
 #define TC_HEADER_Platform_Mutex
 
 #ifdef TC_WINDOWS
+#include <windows.h>
 #	include "System.h"
 #else
 #	include <pthread.h>
@@ -21,6 +22,7 @@ namespace CipherShed
 {
 	class Mutex
 	{
+		//http://stackoverflow.com/questions/12396016/critical-section-and-avoiding-including-windows-h
 #ifdef TC_WINDOWS
 		typedef CRITICAL_SECTION SystemMutex_t;
 #else

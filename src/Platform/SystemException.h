@@ -8,11 +8,11 @@
 
 #ifndef TC_HEADER_Platform_SystemException
 #define TC_HEADER_Platform_SystemException
-
 #include "PlatformBase.h"
-using namespace std;
 #include "Exception.h"
-
+/*
+//using namespace std;
+*/
 namespace CipherShed
 {
 	class SystemException : public Exception

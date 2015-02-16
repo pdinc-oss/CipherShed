@@ -12,7 +12,7 @@
 #ifndef CS_UNITTESTING
 #include <exception>
 #endif
-#include "PlatformBase.h"
+//#include "PlatformBase.h"
 using namespace std;
 #include "Serializable.h"
 

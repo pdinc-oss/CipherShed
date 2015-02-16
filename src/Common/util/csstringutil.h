@@ -1,7 +1,7 @@
 #ifndef _CS_Common_util_csstringutil_h_
 #define _CS_Common_util_csstringutil_h_
 
-#include "../Tcdefs.h"
+//#include "../Tcdefs.h"
 
 #ifdef CS_UNITTESTING
 #include "../../unit-tests/faux/windows/LPWSTR.h"
