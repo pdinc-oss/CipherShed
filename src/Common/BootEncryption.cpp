@@ -27,6 +27,8 @@
 #include "Random.h"
 #include "Registry.h"
 #include "Volumes.h"
+#include "util/process.h"
+
 
 #ifdef VOLFORMAT
 #include "Format/FormatCom.h"

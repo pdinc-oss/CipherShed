@@ -49,6 +49,9 @@ using namespace std;
 
 #include "../Common/util/unicode/ConvertUTF.h"
 
+#include "../Common/util/memory.h"
+#include "../Common/util/process.h"
+
 using namespace CipherShed;
 
 enum timer_ids

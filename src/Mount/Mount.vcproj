@@ -392,6 +392,14 @@
 						RelativePath="..\Common\util\csstringutil.cpp"
 						>
 					</File>
+					<File
+						RelativePath="..\Common\util\memory.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\Common\util\process.cpp"
+						>
+					</File>
 					<Filter
 						Name="unicode"
 						>
@@ -678,10 +686,6 @@
 				Name="Common"
 				>
 				<File
-					RelativePath="..\Boot\Windows\Rescue_Twofish\BootLoader.com.gz"
-					>
-				</File>
-				<File
 					RelativePath="..\Boot\Windows\Release_Serpent\BootLoader.com.gz"
 					>
 				</File>
@@ -707,6 +711,10 @@
 				</File>
 				<File
 					RelativePath="..\Boot\Windows\Rescue\BootLoader.com.gz"
+					>
+				</File>
+				<File
+					RelativePath="..\Boot\Windows\Rescue_Twofish\BootLoader.com.gz"
 					>
 				</File>
 				<File

@@ -34,6 +34,7 @@
 
 #include "../Common/Resource.h"
 #include "../Common/snprintf.h"
+#include "../Common/util/process.h"
 
 using namespace CipherShed;
 

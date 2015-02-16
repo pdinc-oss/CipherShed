@@ -255,6 +255,26 @@
 				<Filter
 					Name="util"
 					>
+					<File
+						RelativePath="..\Common\util\csstringutil.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								CompileAsManaged="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\Common\util\memory.cpp"
+						>
+					</File>
+					<File
+						RelativePath="..\Common\util\process.cpp"
+						>
+					</File>
 					<Filter
 						Name="unicode"
 						>
@@ -434,6 +454,10 @@
 					<Filter
 						Name="windows"
 						>
+						<File
+							RelativePath=".\faux\windows\_strupr.cpp"
+							>
+						</File>
 						<File
 							RelativePath=".\faux\windows\_wcsicmp.cpp"
 							>
@@ -759,7 +783,47 @@
 							</FileConfiguration>
 						</File>
 						<File
+							RelativePath=".\faux\windows\MessageBeep.cpp"
+							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									CompileAsManaged="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Release|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									CompileAsManaged="0"
+								/>
+							</FileConfiguration>
+						</File>
+						<File
 							RelativePath=".\faux\windows\MessageBox.c"
+							>
+							<FileConfiguration
+								Name="Debug|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									CompileAsManaged="0"
+								/>
+							</FileConfiguration>
+							<FileConfiguration
+								Name="Release|Win32"
+								>
+								<Tool
+									Name="VCCLCompilerTool"
+									CompileAsManaged="0"
+								/>
+							</FileConfiguration>
+						</File>
+						<File
+							RelativePath=".\faux\windows\MultiByteToWideChar.cpp"
 							>
 							<FileConfiguration
 								Name="Debug|Win32"

@@ -22,6 +22,7 @@
 #include "../Common/snprintf.h"
 #include "Resource.h"
 #include "Setup.h"
+#include "../Common/util/process.h"
 
 using namespace std;
 

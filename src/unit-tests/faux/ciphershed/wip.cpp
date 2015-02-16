@@ -57,12 +57,6 @@ uint_32t t_il[4][256];
 uint_32t t_im[4][256];
 uint_32t t_rc[(5 * (16 / 4 - 2))];
 
-//csstrinutil.cpp
-void ToUNICODE (char *lpszText){}
-void UpperCaseCopy (char *lpszDest, const char *lpszSource){}
-std::string WideToSingleString (const std::wstring &wideString){return 0;}
-std::wstring SingleStringToWide (const std::string &singleString){return 0;}
-
 //fsutil.cpp
 BOOL ResolveSymbolicLink (const wchar_t *symLinkName, PWSTR targetName){return 0;}
 

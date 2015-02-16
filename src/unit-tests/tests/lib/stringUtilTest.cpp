@@ -21,6 +21,50 @@ namespace CipherShed_Tests_lib
 		{"abc",        "ABC",        0},
 	};
 
+	void hexdump(char* buf, char *src)
+    {
+		do
+		{
+			sprintf(buf,"0x%02x,",*src);
+			buf+=5*sizeof(*buf);
+		}
+		while (*src++);
+	 }
+
+	void mask(char* p, char* l, char* r)
+	{
+		while (true)
+		{
+			if (*l==*p)
+			{
+				*p='.';
+				++p;
+				++l;
+				++r;
+				continue;
+			}
+			else if (*l==0)
+			{
+				*p='L';
+			}
+			else if (*r==0)
+			{
+				*p='R';
+			}
+			else if (*l<*p)
+			{
+				*p='<';
+			}
+			else
+			{
+				*p='>';
+			}
+			++p;
+			*p=0;
+			break;
+		}
+	}
+
 	TESTCLASS
 	PUBLIC_REF_CLASS StringUtilTest TESTCLASSEXTENDS
 	{
@@ -43,6 +87,17 @@ namespace CipherShed_Tests_lib
 		};
 
 		TESTMETHOD
+		void testStringUtilStrlen()
+		{
+			char l[]="XYZZY";
+			char r[]={0x58,0x59,0x5a,0x5a,0x59,0x00};
+			TEST_ASSERT(strcmp(l,r)==0);
+
+			
+			TEST_ASSERT(strcmp(testDataTS_UpperCaseCopy[0].dst,r)==0);
+		}
+
+		TESTMETHOD
 		void testStringUtilCopyUpper()
 		{
 			char buf[2048];
@@ -51,12 +106,10 @@ namespace CipherShed_Tests_lib
 				for (int ii=0; ii<sizeof(buf)/sizeof(buf[0]); ++ii) buf[ii]=0;
 
 				UpperCaseCopy (buf, testDataTS_UpperCaseCopy[i].src);
-				int c=strcmp(testDataTS_UpperCaseCopy[i].src,buf);
-
-				int l=strlen(buf);
+				int c=strcmp(testDataTS_UpperCaseCopy[i].dst,buf);
 
 				char msg[2048];
-				sprintf(msg,"i:%d test str <%s> expected:<%s> with strcmp=%d, got <%s> with strcmp=%d and strlen=%d",i,testDataTS_UpperCaseCopy[i].src, testDataTS_UpperCaseCopy[i].dst,testDataTS_UpperCaseCopy[i].r, buf, c, l);
+				sprintf(msg,"i:%d test str <%s> expected:<%s> with strcmp=%d, got <%s> with strcmp=%d", i, testDataTS_UpperCaseCopy[i].src, testDataTS_UpperCaseCopy[i].dst, testDataTS_UpperCaseCopy[i].r, buf, c);
 				TEST_ASSERT_MSG(c==testDataTS_UpperCaseCopy[i].r,msg);
 			}
 
@@ -97,6 +150,10 @@ namespace CipherShed_Tests_lib
 		{
 			TEST_ADD(StringUtilTest::testStringUtilStdLibToUpper);
 			TEST_ADD(StringUtilTest::testStringUtilTrue);
+			TEST_ADD(StringUtilTest::testStringUtilStrlen);
+			TEST_ADD(StringUtilTest::testStringUtilCopyUpper);
+			TEST_ADD(StringUtilTest::testStringUtilStdLibToUpper);
+			TEST_ADD(StringUtilTest::testStringUtilStdLibStrlen);
 		}
 	};
 }

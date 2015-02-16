@@ -49,6 +49,7 @@
 #include "../Common/Xml.h"
 
 #include "../Common/util/unicode/ConvertUTF.h"
+#include "../Common/util/process.h"
 
 using namespace CipherShed;
 

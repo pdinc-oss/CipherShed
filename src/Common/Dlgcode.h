@@ -255,9 +255,8 @@ void cleanup ( void );
 //moved to volutil.h
 int FakeDosNameForDevice ( const char *lpszDiskFile , char *lpszDosDevice , char *lpszCFDevice , BOOL bNameOnly );
 int RemoveFakeDosName ( char *lpszDiskFile , char *lpszDosDevice );
-void AbortProcess ( char *stringId );
-void AbortProcessSilent ( void );
-void *err_malloc ( size_t size );
+//moved to process.h
+//moved to memory.h
 char *err_strdup ( char *lpszText );
 //moved to errors.h
 //moved to diskutil.h

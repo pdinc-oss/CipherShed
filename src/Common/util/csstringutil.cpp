@@ -1,8 +1,20 @@
 #include "csstringutil.h"
 
 
-#include "../Exception.h"
+#include "../../Platform/SystemException.h"
+#include "../../Platform/Exception.h"
 #include "../../Platform/ForEach.h"
+#include "memory.h"
+#include <string.h>
+
+#ifdef CS_UNITTESTING
+#include "../../unit-tests/faux/windows/CP_ACP.h"
+#include "../../unit-tests/faux/windows/MultiByteToWideChar.h"
+#include "../../unit-tests/faux/windows/WideCharToMultiByte.h"
+#include "../../unit-tests/faux/windows/_strupr.h"
+#include <string>
+#include <stdlib.h>
+#endif
 
 using namespace CipherShed;
 
@@ -34,7 +46,7 @@ std::wstring SingleStringToWide (const std::string &singleString)
 	throw_sys_if (wideLen == 0);
 
 	wbuf[wideLen] = 0;
-	return wbuf;
+	return (wchar_t*)wbuf;
 }
 
 /**
@@ -47,7 +59,7 @@ std::string WideToSingleString (const std::wstring &wideString)
 		return std::string();
 
 	char buf[65536];
-	int len = WideCharToMultiByte (CP_ACP, 0, wideString.c_str(), -1, buf, array_capacity (buf) - 1, NULL, NULL);
+	int len = WideCharToMultiByte (CP_ACP, 0, (LPCWSTR)wideString.c_str(), -1, buf, array_capacity (buf) - 1, NULL, NULL);
 	throw_sys_if (len == 0);
 
 	buf[len] = 0;
@@ -64,7 +76,7 @@ void ToUNICODE (char *lpszText)
 	int j = strlen (lpszText);
 	if (j == 0)
 	{
-		wcscpy ((LPWSTR) lpszText, (LPWSTR) WIDE (""));
+		wcscpy ((wchar_t*) lpszText, (wchar_t*) WIDE (""));
 		return;
 	}
 	else
@@ -72,9 +84,9 @@ void ToUNICODE (char *lpszText)
 		LPWSTR lpszNewText = (LPWSTR) err_malloc ((j + 1) * 2);
 		j = MultiByteToWideChar (CP_ACP, 0L, lpszText, -1, lpszNewText, j + 1);
 		if (j > 0)
-			wcscpy ((LPWSTR) lpszText, lpszNewText);
+			wcscpy ((wchar_t*) lpszText, (wchar_t*)lpszNewText);
 		else
-			wcscpy ((LPWSTR) lpszText, (LPWSTR) WIDE (""));
+			wcscpy ((wchar_t*) lpszText, (wchar_t*) WIDE (""));
 		free (lpszNewText);
 	}
 }
@@ -93,7 +105,7 @@ std::wstring Utf8StringToWide (const std::string &utf8String)
 	throw_sys_if (wideLen == 0);
 
 	wbuf[wideLen] = 0;
-	return wbuf;
+	return (wchar_t*)wbuf;
 }
 
 
@@ -107,7 +119,7 @@ std::string WideToUtf8String (const std::wstring &wideString)
 		return std::string();
 
 	char buf[65536];
-	int len = WideCharToMultiByte (CP_UTF8, 0, wideString.c_str(), -1, buf, array_capacity (buf) - 1, NULL, NULL);
+	int len = WideCharToMultiByte (CP_UTF8, 0, (LPCWSTR)wideString.c_str(), -1, buf, array_capacity (buf) - 1, NULL, NULL);
 	throw_sys_if (len == 0);
 
 	buf[len] = 0;
@@ -144,6 +156,7 @@ void LowerCaseCopy (char *lpszDest, const char *lpszSource)
 }
 /**
 Why is this being used in a crypto program?
+_strupr does an inplace replace of each char, this is bad mojo.
 */
 std::string StringToUpperCase (const std::string &str)
 {
@@ -175,7 +188,7 @@ void LeftPadString (char *szTmp, int len, int targetLen, char filler)
 
 void ToSBCS (LPWSTR lpszText)
 {
-	int j = wcslen (lpszText);
+	int j = wcslen ((const wchar_t *)lpszText);
 	if (j == 0)
 	{
 		strcpy ((char *) lpszText, "");

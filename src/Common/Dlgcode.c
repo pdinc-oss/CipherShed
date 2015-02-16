@@ -52,6 +52,8 @@ using namespace std;
 #include "Xts.h"
 #include "../Boot/Windows/BootCommon.h"
 #include "snprintf.h"
+#include "util/memory.h"
+#include "util/process.h"
 
 #ifdef TCMOUNT
 #include "Mount/Mount.h"
@@ -343,36 +345,9 @@ int RemoveFakeDosName (char *lpszDiskFile, char *lpszDosDevice)
 	return 0;
 }
 
+//moved to process.cpp
 
-void AbortProcess (char *stringId)
-{
-	// Note that this function also causes localcleanup() to be called (see atexit())
-	MessageBeep (MB_ICONEXCLAMATION);
-	MessageBoxW (NULL, GetString (stringId), lpszTitle, ICON_HAND);
-	exit (1);
-}
-
-void AbortProcessSilent (void)
-{
-	// Note that this function also causes localcleanup() to be called (see atexit())
-	exit (1);
-}
-
-
-#pragma warning(push)
-#pragma warning(disable:4702)
-
-void *err_malloc (size_t size)
-{
-	void *z = (void *) TCalloc (size);
-	if (z)
-		return z;
-	AbortProcess ("OUTOFMEMORY");
-	return 0;
-}
-
-#pragma warning(pop)
-
+//moved to memory.cpp
 
 char *err_strdup (char *lpszText)
 {

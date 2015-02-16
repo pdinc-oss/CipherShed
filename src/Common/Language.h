@@ -8,6 +8,13 @@
 
 #ifndef CS_UNITTESTING
 #include <windows.h>
+#else
+#include "../unit-tests/faux/windows/HWND.h"
+#include "../unit-tests/faux/windows/UINT.h"
+#include "../unit-tests/faux/windows/WPARAM.h"
+#include "../unit-tests/faux/windows/LPARAM.h"
+#include "../unit-tests/faux/windows/BOOL.h"
+#include "../unit-tests/faux/windows/CALLBACK.h"
 #endif
 
 #ifdef __cplusplus

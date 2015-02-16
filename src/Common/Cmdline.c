@@ -21,6 +21,8 @@
 #include "Dlgcode.h"
 #include "Language.h"
 #include "snprintf.h"
+#include "util/memory.h"
+#include "util/process.h"
 
 /* Except in response to the WM_INITDIALOG message, the dialog box procedure
    should return nonzero if it processes the message, and zero if it does
