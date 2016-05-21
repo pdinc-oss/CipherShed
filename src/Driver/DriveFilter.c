@@ -902,7 +902,9 @@ void ReopenBootVolumeHeader (PIRP irp, PIO_STACK_LOCATION irpSp)
 		offset.QuadPart = TC_BOOT_VOLUME_HEADER_SECTOR_OFFSET;
 
 	if (BootArgs.Flags & TC_BOOT_ARGS_FLAG_BOOT_VOLUME_HEADER_PRESENT) {
+#ifdef EFI_WINDOWS_DRIVER
 		memcpy(header, &BootVolumeHeader[0], TC_BOOT_ENCRYPTION_VOLUME_HEADER_SIZE);
+#endif
 		irp->IoStatus.Status = STATUS_SUCCESS;
 	} else
 		irp->IoStatus.Status = TCReadDevice(BootDriveFilterExtension->LowerDeviceObject, header, offset, TC_BOOT_ENCRYPTION_VOLUME_HEADER_SIZE);

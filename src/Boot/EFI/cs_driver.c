@@ -15,8 +15,6 @@
 /* The following header files are needed to define protocols that are not defined
  * in the GNU-EFI package. They are taken from the EDK2 project */
 #include <edk2/DriverBinding.h>
-#include <edk2/ComponentName.h>
-#include <edk2/ComponentName2.h>
 #include <edk2/BlockIo2.h>
 
 #include "cs_common.h"

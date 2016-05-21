@@ -16,10 +16,10 @@ all: crypt $(TARGET)
 PHONY: all clean stick crypt
 
 CSController.so: $(OBJS_CTR) $(OBJS_COMMON) $(OBJS_CRYPTO)
-	ld $(LDFLAGS) $(OBJS_CTR) $(OBJS_COMMON) $(OBJS_CRYPTO) -o $@ -lefi -lgnuefi
+	ld $(LDFLAGS) $(OBJS_CTR) $(OBJS_COMMON) $(OBJS_CRYPTO) -o $@ -lgnuefi
 
 CSDriver.so: $(OBJS_DRV) $(OBJS_COMMON) $(OBJS_CRYPTO)
-	ld $(LDFLAGS) $(OBJS_DRV) $(OBJS_COMMON) $(OBJS_CRYPTO) -o $@ -lefi -lgnuefi
+	ld $(LDFLAGS) $(OBJS_DRV) $(OBJS_COMMON) $(OBJS_CRYPTO) -o $@ -lgnuefi
 
 CSController.efi: CSController.so
 	@echo [OBJ] $@

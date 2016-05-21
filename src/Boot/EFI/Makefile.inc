@@ -20,11 +20,25 @@ EFI_LDS         = $(EFILIB)/elf_$(ARCH)_efi.lds
 
 # since in efidef.h is defined "typedef UINT8 CHAR8;" and EFI_DEBUG is enabled: 
 #  -Wno-pointer-sign is needed to suppress lots of warnings (for ASSERT())
-CFLAGS          = $(EFIINCS) -fno-stack-protector -fpic \
+CFLAGS          = $(EFIINCS) -fno-stack-protector \
 		  -fshort-wchar -mno-red-zone -Wall -DEFI -DEFI_DEBUG -Wno-pointer-sign
 
-LDFLAGS         = -nostdlib -znocombreloc -T $(EFI_LDS) -shared \
+LDFLAGS         = -nostdlib \
 		  -Bsymbolic -L $(EFILIB) -L $(LIB) $(EFI_CRT_OBJS) 
+
+# Only enable -fpic for non MinGW compilers (unneeded on MinGW)
+GCCMACHINE := $(shell $(CC) -dumpmachine)
+ifeq (mingw32,$(findstring mingw32, $(GCCMACHINE)))
+  CFLAGS       +=
+  LDFLAGS      += -znocombreloc -T $(EFI_LDS) -shared
+else ifeq (cygwin,$(findstring cygwin, $(GCCMACHINE)))
+  CFLAGS       +=
+  LDFLAGS      += -r
+else
+  CFLAGS       += -fpic
+  LDFLAGS      += -znocombreloc -T $(EFI_LDS) -shared
+endif
+
 
 ifeq ($(ARCH),x86_64)
   CFLAGS += -m64 -DEFI_FUNCTION_WRAPPER -DHAVE_USE_MS_ABI -DX86_64

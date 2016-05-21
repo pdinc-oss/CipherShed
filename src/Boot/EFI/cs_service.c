@@ -13,7 +13,6 @@
 
 #include "cs_service.h"
 #include "cs_controller.h"
-#include <edk2/ComponentName.h>
 
 #define CS_SERVICE_NUMBER_SECTORS	400	/* number sectors to encrypt/decrypt at once while encryption/decryption
  	 	 	 	 	 	 	 	 	 	   of the media using the service menu */
