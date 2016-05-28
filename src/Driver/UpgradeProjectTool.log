@@ -1,8 +1,0 @@
-UpgradeFiles:	Verbose  : 06/09/2015 00:03:52
-UpgradeFiles:	Information  : Upgrading all projects under c:\Users\fn\CipherShed\src\Driver
-        UpgradeProjects:	Information  : Upgrading project file: c:\Users\fn\CipherShed\src\Driver\Driver.vcxproj
-        UpgradeProjects:	Information  : Project file c:\Users\fn\CipherShed\src\Driver\Driver.vcxproj is not a WDK 
-                                        	project. Skipping project file.
-UpgradeProjects        :	Information  : All projects upgraded
-UpgradeFiles           :	Information  : Upgrading all solutions under c:\Users\fn\CipherShed\src\Driver
-UpgradeSolutions       :	Information  : Solutions upgraded
