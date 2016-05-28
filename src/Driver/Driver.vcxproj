@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug x64|Win32">
+      <Configuration>Debug x64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug x86|Win32">
+      <Configuration>Debug x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release x64|Win32">
+      <Configuration>Release x64</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release x86|Win32">
+      <Configuration>Release x86</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EF5EF444-18D0-40D7-8DFA-775EC4448602}</ProjectGuid>
+    <RootNamespace>Driver</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug x64|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x64|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug x86|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug x64|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release x64|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug x86|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <NMakeBuildCommandLine>echo ------ Building truecrypt.sys: Debug x86 ------
+cmd.exe /c BuildDriver.cmd -build -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Building truecrypt.sys: Debug x64 ------
+BuildDriver.cmd -build -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo ------ Rebuilding truecrypt.sys: Debug x86 ------
+cmd.exe /c BuildDriver.cmd -rebuild -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Rebuilding truecrypt.sys: Debug x64 ------
+BuildDriver.cmd -rebuild -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo ------ Cleaning truecrypt.sys: Debug x86 ------
+cmd.exe /c BuildDriver.cmd -clean -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Cleaning truecrypt.sys: Debug x64 ------
+BuildDriver.cmd -clean -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>DEBUG;_DEBUG;TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+    <IncludePath>$(WindowsSdkDir)\include\km;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <NMakeBuildCommandLine>echo ------ Building truecrypt.sys: Release x86 ------
+cmd.exe /c BuildDriver.cmd -build -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Building truecrypt.sys: Release x64 ------
+BuildDriver.cmd -build -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>echo ------ Rebuilding truecrypt.sys: Release x86 ------
+cmd.exe /c BuildDriver.cmd -rebuild -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Rebuilding truecrypt.sys: Release x64 ------
+BuildDriver.cmd -rebuild -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>echo ------ Cleaning truecrypt.sys: Release x86 ------
+cmd.exe /c BuildDriver.cmd -clean -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"
+if errorlevel 1 exit %errorlevel%
+echo.
+echo ------ Cleaning truecrypt.sys: Release x64 ------
+BuildDriver.cmd -clean -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x86|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>BuildDriver.cmd -build -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>BuildDriver.cmd -rebuild -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>BuildDriver.cmd -clean -release -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug x86|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>if exist $(SolutionDir)\Mount\Debug\CipherShed.exe ( copy $(SolutionDir)\Mount\Debug\CipherShed.exe $(ProjectDir)\obj_driver_debug\i386\CipherShed.exe &gt;NUL:
+) else ( copy $(SolutionDir)\Mount\Release\CipherShed.exe $(ProjectDir)\obj_driver_debug\i386\CipherShed.exe &gt;NUL: )
+
+BuildDriver.cmd -build -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>if exist $(SolutionDir)\Mount\Debug\CipherShed.exe ( copy $(SolutionDir)\Mount\Debug\CipherShed.exe $(ProjectDir)\obj_driver_debug\i386\CipherShed.exe &gt;NUL:
+) else ( copy $(SolutionDir)\Mount\Release\CipherShed.exe $(ProjectDir)\obj_driver_debug\i386\CipherShed.exe &gt;NUL: )
+
+BuildDriver.cmd -rebuild -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>BuildDriver.cmd -clean -debug -x86 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)\obj_driver_debug\i386\CipherShed.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>DEBUG;_DEBUG;TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release x64|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>BuildDriver.cmd -build -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>BuildDriver.cmd -rebuild -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>BuildDriver.cmd -clean -release -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput />
+    <NMakePreprocessorDefinitions>TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug x64|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>if exist $(SolutionDir)\Mount\Debug\CipherShed.exe ( copy $(SolutionDir)\Mount\Debug\CipherShed.exe $(ProjectDir)\obj_driver_debug\amd64\CipherShed.exe &gt;NUL:
+) else ( copy $(SolutionDir)\Mount\Release\CipherShed.exe $(ProjectDir)\obj_driver_debug\amd64\CipherShed.exe &gt;NUL: )
+
+BuildDriver.cmd -build -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>if exist $(SolutionDir)\Mount\Debug\CipherShed.exe ( copy $(SolutionDir)\Mount\Debug\CipherShed.exe $(ProjectDir)\obj_driver_debug\amd64\CipherShed.exe &gt;NUL:
+) else ( copy $(SolutionDir)\Mount\Release\CipherShed.exe $(ProjectDir)\obj_driver_debug\amd64\CipherShed.exe &gt;NUL: )
+
+BuildDriver.cmd -rebuild -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>BuildDriver.cmd -clean -debug -x64 "$(SolutionDir)\Common" "$(SolutionDir)\Crypto" "$(ProjectDir)"</NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)\obj_driver_debug\amd64\CipherShed.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>DEBUG;_DEBUG;TC_WINDOWS_DRIVER;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <NMakeIncludeSearchPath>$(ProjectDir);$(SolutionDir);$(SolutionDir)\Common;$(SolutionDir)\Crypto;$(WINDDK_ROOT)\inc\ddk;$(WINDDK_ROOT)\inc\api;$(NMakeIncludeSearchPath)</NMakeIncludeSearchPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Cache.c" />
+    <ClCompile Include="..\Common\Crc.c" />
+    <ClCompile Include="..\Common\Crypto.c" />
+    <ClCompile Include="..\Common\EncryptionThreadPool.c" />
+    <ClCompile Include="..\Common\Endian.c" />
+    <ClCompile Include="..\Common\GfMul.c" />
+    <ClCompile Include="..\Common\Pkcs5.c" />
+    <ClCompile Include="..\Common\Tests.c" />
+    <ClCompile Include="..\Common\Volumes.c" />
+    <ClCompile Include="..\Common\Wipe.c" />
+    <ClCompile Include="..\Common\Xts.c" />
+    <ClCompile Include="..\Crypto\Aeskey.c" />
+    <ClCompile Include="..\Crypto\Aestab.c" />
+    <ClCompile Include="..\Crypto\Blowfish.c" />
+    <ClCompile Include="..\Crypto\Cast.c" />
+    <ClCompile Include="..\Crypto\Des.c" />
+    <ClCompile Include="..\Crypto\Rmd160.c" />
+    <ClCompile Include="..\Crypto\Serpent.c" />
+    <ClCompile Include="..\Crypto\Sha1.c" />
+    <ClCompile Include="..\Crypto\Sha2.c" />
+    <ClCompile Include="..\Crypto\Twofish.c" />
+    <ClCompile Include="..\Crypto\Whirlpool.c" />
+    <ClCompile Include="DriveFilter.c" />
+    <ClCompile Include="DumpFilter.c" />
+    <ClCompile Include="EncryptedIoQueue.c" />
+    <ClCompile Include="Ntdriver.c" />
+    <ClCompile Include="Ntvol.c" />
+    <ClCompile Include="VolumeFilter.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Common\Makefile" />
+    <None Include="..\Common\Sources" />
+    <None Include="..\Crypto\Aes_hw_cpu.asm" />
+    <None Include="..\Crypto\Aes_x64.asm" />
+    <None Include="..\Crypto\Aes_x86.asm" />
+    <None Include="..\Crypto\Makefile" />
+    <None Include="..\Crypto\Makefile.inc" />
+    <None Include="..\Crypto\Sources" />
+    <None Include="BuildDriver.cmd" />
+    <None Include="Makefile" />
+    <None Include="Sources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\Apidrvr.h" />
+    <ClInclude Include="..\Common\Cache.h" />
+    <ClInclude Include="..\Common\Common.h" />
+    <ClInclude Include="..\Common\constants.h" />
+    <ClInclude Include="..\Common\EncryptionThreadPool.h" />
+    <ClInclude Include="..\Common\GfMul.h" />
+    <ClInclude Include="..\Common\Tcdefs.h" />
+    <ClInclude Include="..\Common\Volumes.h" />
+    <ClInclude Include="..\Common\Wipe.h" />
+    <ClInclude Include="..\Common\Xts.h" />
+    <ClInclude Include="DriveFilter.h" />
+    <ClInclude Include="DumpFilter.h" />
+    <ClInclude Include="EncryptedIoQueue.h" />
+    <ClInclude Include="Ntdriver.h" />
+    <ClInclude Include="Ntvol.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="VolumeFilter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Driver.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

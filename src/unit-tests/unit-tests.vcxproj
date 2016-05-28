@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectTypes>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}</ProjectTypes>
+    <ProjectGuid>{4AF37FBD-5F28-425A-9B8A-CFBF3BF07678}</ProjectGuid>
+    <RootNamespace>unittests</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>CS_UNITTESTING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist app.config copy app.config "$(OutDir)app.config"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>CS_UNITTESTING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>if exist app.config copy app.config "$(OutDir)app.config"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Crc.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\cursor.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\errors.cpp" />
+    <ClCompile Include="..\Common\dialog\userperms.cpp" />
+    <ClCompile Include="..\Common\Endian.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\Password.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\ConvertUTF.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\strcmpw.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\Common\volume\volutil.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\ciphershed\wip.cpp" />
+    <ClCompile Include="faux\windows\CloseHandle.cpp" />
+    <ClCompile Include="faux\windows\CreateFile.cpp" />
+    <ClCompile Include="faux\windows\CreateWindowEx.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DefWindowProc.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DestroyWindow.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DeviceIoControl.cpp" />
+    <ClCompile Include="faux\windows\EnableWindow.cpp" />
+    <ClCompile Include="faux\windows\FlushFileBuffers.cpp" />
+    <ClCompile Include="faux\windows\FormatMessage.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetCurrentProcess.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetFileSize.cpp" />
+    <ClCompile Include="faux\windows\GetFileTime.cpp" />
+    <ClCompile Include="faux\windows\GetLastError.cpp" />
+    <ClCompile Include="faux\windows\GetModuleHandle.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetProcAddress.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetSystemMetrics.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetTokenInformation.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetVersionEx.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetWindowText.cpp" />
+    <ClCompile Include="faux\windows\GetWindowTextLength.cpp" />
+    <ClCompile Include="faux\windows\IsUserAnAdmin.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\IsWellKnownSid.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\LoadCursor.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\LocalFree.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\MessageBox.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\OpenProcessToken.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\OutputDebugString.cpp" />
+    <ClCompile Include="faux\windows\QueryDosDevice.cpp" />
+    <ClCompile Include="faux\windows\RegisterClassEx.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\RegOpenKeyEx.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetCursor.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetFilePointer.cpp" />
+    <ClCompile Include="faux\windows\SetFileTime.cpp" />
+    <ClCompile Include="faux\windows\SetLastError.cpp" />
+    <ClCompile Include="faux\windows\SetLayeredWindowAttributes.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\ShellNotifyIcon.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\ShowWindow.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\swprintf_s.cpp" />
+    <ClCompile Include="faux\windows\UnregisterClass.c">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="faux\windows\_wcsicmp.cpp" />
+    <ClCompile Include="tests\algo\crcTest.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="tests\algo\endianTest.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="tests\algo\passwordTest.cpp" />
+    <ClCompile Include="tests\io\headerTest.cpp" />
+    <ClCompile Include="tests\lib\stringUtilTest.cpp" />
+    <ClCompile Include="tests\lib\unicodeTest.cpp" />
+    <ClCompile Include="unittesting.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\constants.h" />
+    <ClInclude Include="..\Common\Crc.h" />
+    <ClInclude Include="..\Common\dialog\cursor.h" />
+    <ClInclude Include="..\Common\dialog\errors.h" />
+    <ClInclude Include="..\Common\dialog\userperms.h" />
+    <ClInclude Include="..\Common\Endian.h" />
+    <ClInclude Include="..\Common\Password.h" />
+    <ClInclude Include="..\Common\Tcdefs.h" />
+    <ClInclude Include="..\Common\types\password.h" />
+    <ClInclude Include="..\Common\util\unicode\ConvertUTF.h" />
+    <ClInclude Include="..\Common\util\unicode\strcmpw.h" />
+    <ClInclude Include="faux\c\stdlib\size_t.h" />
+    <ClInclude Include="faux\windows\ACCESSTYPES.h" />
+    <ClInclude Include="faux\windows\ARRAYSIZE.h" />
+    <ClInclude Include="faux\windows\ATOM.h" />
+    <ClInclude Include="faux\windows\BOOL.h" />
+    <ClInclude Include="faux\windows\BOOLEAN.h" />
+    <ClInclude Include="faux\windows\BYTE.h" />
+    <ClInclude Include="faux\windows\CALLBACK.h" />
+    <ClInclude Include="faux\windows\CHAR.h" />
+    <ClInclude Include="faux\windows\CloseHandle.h" />
+    <ClInclude Include="faux\windows\CONST.h" />
+    <ClInclude Include="faux\windows\CreateFile.h" />
+    <ClInclude Include="faux\windows\CreateWindowEx.h" />
+    <ClInclude Include="faux\windows\DECLARE_HANDLE.h" />
+    <ClInclude Include="faux\windows\DefWindowProc.h" />
+    <ClInclude Include="faux\windows\DestroyWindow.h" />
+    <ClInclude Include="faux\windows\DeviceIoControl.h" />
+    <ClInclude Include="faux\windows\DEVICE_TYPE.h" />
+    <ClInclude Include="faux\windows\DISK_GEOMETRY.h" />
+    <ClInclude Include="faux\windows\DWORD.h" />
+    <ClInclude Include="faux\windows\EnableWindow.h" />
+    <ClInclude Include="faux\windows\ERROR.h" />
+    <ClInclude Include="faux\windows\FAR.h" />
+    <ClInclude Include="faux\windows\FILE.h" />
+    <ClInclude Include="faux\windows\FILETIME.h" />
+    <ClInclude Include="faux\windows\FlushFileBuffers.h" />
+    <ClInclude Include="faux\windows\FormatMessage.h" />
+    <ClInclude Include="faux\windows\FPO_DATA.h" />
+    <ClInclude Include="faux\windows\GetCurrentProcess.h" />
+    <ClInclude Include="faux\windows\GetFileSize.h" />
+    <ClInclude Include="faux\windows\GetFileTime.h" />
+    <ClInclude Include="faux\windows\GetLastError.h" />
+    <ClInclude Include="faux\windows\GetModuleHandle.h" />
+    <ClInclude Include="faux\windows\GetProcAddress.h" />
+    <ClInclude Include="faux\windows\GetSystemMetrics.h" />
+    <ClInclude Include="faux\windows\GetTokenInformation.h" />
+    <ClInclude Include="faux\windows\GetVersionEx.h" />
+    <ClInclude Include="faux\windows\GetWindowText.h" />
+    <ClInclude Include="faux\windows\GetWindowTextLength.h" />
+    <ClInclude Include="faux\windows\GUID.h" />
+    <ClInclude Include="faux\windows\HANDLE.h" />
+    <ClInclude Include="faux\windows\HBITMAP.h" />
+    <ClInclude Include="faux\windows\HBRUSH.h" />
+    <ClInclude Include="faux\windows\HCURSOR.h" />
+    <ClInclude Include="faux\windows\HDC.h" />
+    <ClInclude Include="faux\windows\HFILE.h" />
+    <ClInclude Include="faux\windows\HFONT.h" />
+    <ClInclude Include="faux\windows\HICON.h" />
+    <ClInclude Include="faux\windows\HINSTANCE.h" />
+    <ClInclude Include="faux\windows\HWND.h" />
+    <ClInclude Include="faux\windows\IDC_x.h" />
+    <ClInclude Include="faux\windows\IMAGE_HEADERS.h" />
+    <ClInclude Include="faux\windows\IOCTL_DISK.h" />
+    <ClInclude Include="faux\windows\IsUserAnAdmin.h" />
+    <ClInclude Include="faux\windows\IsWellKnownSid.h" />
+    <ClInclude Include="faux\windows\lang.h" />
+    <ClInclude Include="faux\windows\LARGE_INTEGER.h" />
+    <ClInclude Include="faux\windows\LIST_ENTRY.h" />
+    <ClInclude Include="faux\windows\LoadCursor.h" />
+    <ClInclude Include="faux\windows\LONG.h" />
+    <ClInclude Include="faux\windows\LONG_PTR.h" />
+    <ClInclude Include="faux\windows\LPARAM.h" />
+    <ClInclude Include="faux\windows\LPWSTR.h" />
+    <ClInclude Include="faux\windows\LRESULT.h" />
+    <ClInclude Include="faux\windows\MAKEINTRESOURCE.h" />
+    <ClInclude Include="faux\windows\MAX_PATH.h" />
+    <ClInclude Include="faux\windows\MEDIA_TYPE.h" />
+    <ClInclude Include="faux\windows\MessageBox.h" />
+    <ClInclude Include="faux\windows\NEAR.h" />
+    <ClInclude Include="faux\windows\NIF.h" />
+    <ClInclude Include="faux\windows\NIIF.h" />
+    <ClInclude Include="faux\windows\NIM.h" />
+    <ClInclude Include="faux\windows\NOTIFYICON.h" />
+    <ClInclude Include="faux\windows\NULL.h" />
+    <ClInclude Include="faux\windows\OpenProcessToken.h" />
+    <ClInclude Include="faux\windows\OSVERSIONINFOEX.h" />
+    <ClInclude Include="faux\windows\OUT.h" />
+    <ClInclude Include="faux\windows\OVERLAPPED.h" />
+    <ClInclude Include="faux\windows\PARTITION_INFORMATION.h" />
+    <ClInclude Include="faux\windows\POINT.h" />
+    <ClInclude Include="faux\windows\RegisterClassEx.h" />
+    <ClInclude Include="faux\windows\RegOpenKeyEx.h" />
+    <ClInclude Include="faux\windows\SECURITY_ATTRIBUTES.h" />
+    <ClInclude Include="faux\windows\SetCursor.h" />
+    <ClInclude Include="faux\windows\SetFilePointer.h" />
+    <ClInclude Include="faux\windows\SetFileTime.h" />
+    <ClInclude Include="faux\windows\SetLastError.h" />
+    <ClInclude Include="faux\windows\SetLayeredWindowAttributes.h" />
+    <ClInclude Include="faux\windows\ShellNotifyIcon.h" />
+    <ClInclude Include="faux\windows\SHORT.h" />
+    <ClInclude Include="faux\windows\ShowWindow.h" />
+    <ClInclude Include="faux\windows\SID_AND_ATTRIBUTES.h" />
+    <ClInclude Include="faux\windows\stdcall.h" />
+    <ClInclude Include="faux\windows\TOKEN_INFORMATION_CLASS.h" />
+    <ClInclude Include="faux\windows\TOKEN_USER.h" />
+    <ClInclude Include="faux\windows\UINT.h" />
+    <ClInclude Include="faux\windows\UINT_PTR.h" />
+    <ClInclude Include="faux\windows\UnregisterClass.h" />
+    <ClInclude Include="faux\windows\VOID.h" />
+    <ClInclude Include="faux\windows\WCHAR.h" />
+    <ClInclude Include="faux\windows\WINAPI.h" />
+    <ClInclude Include="faux\windows\WM_APP.h" />
+    <ClInclude Include="faux\windows\WNDCLASSEX.h" />
+    <ClInclude Include="faux\windows\WNDPROC.h" />
+    <ClInclude Include="faux\windows\WORD.h" />
+    <ClInclude Include="faux\windows\WPARAM.h" />
+    <ClInclude Include="faux\windows\ZeroMemory.h" />
+    <ClInclude Include="unittesting.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

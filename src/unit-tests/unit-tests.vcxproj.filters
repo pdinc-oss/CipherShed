@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{7fb8a03e-ebcd-4bbc-b512-62f2c3564a70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\util">
+      <UniqueIdentifier>{982ea183-8e62-444d-8c32-69d4bd0fa604}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\util\unicode">
+      <UniqueIdentifier>{233d3b86-32f3-4b43-b482-a9d57852310e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\dialog">
+      <UniqueIdentifier>{2eca995b-ca37-4ac5-9ec7-0f550c2425ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\volume">
+      <UniqueIdentifier>{6bf3cd30-798b-4576-8b9c-005b80080134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests">
+      <UniqueIdentifier>{9cbc4b39-f54b-4159-8aa6-642ac6340382}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\tests">
+      <UniqueIdentifier>{ef8c842a-5b1b-4fa6-b86e-3aa5f0bc8e91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\tests\algo">
+      <UniqueIdentifier>{770f1105-9dc2-4cf8-9466-decfeeb5cbe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\tests\io">
+      <UniqueIdentifier>{feb214d4-2108-41da-b07b-17c102a528e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\tests\lib">
+      <UniqueIdentifier>{4f599780-040b-43db-a5f5-98f2c779b3a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\faux">
+      <UniqueIdentifier>{3fe09e61-b875-46a3-a56d-0525abdeef35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\faux\windows">
+      <UniqueIdentifier>{e2cb5912-0068-45f0-b74b-471cef8eb973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\unit-tests\faux\ciphershed">
+      <UniqueIdentifier>{5f560242-75be-491c-9f6c-a67270d5b79d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{a07780c6-9c6c-4bb9-8e1c-ceda7a7f9a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\types">
+      <UniqueIdentifier>{60eb98ba-c503-4edf-aa43-2cc7d2d0f813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\util">
+      <UniqueIdentifier>{67d90526-3810-45ca-81db-84b5df280a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\util\unicode">
+      <UniqueIdentifier>{7162d5b7-558a-4f07-8939-782d3ff6da2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\dialog">
+      <UniqueIdentifier>{71af45ef-1be7-4782-b66a-498a120ce409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests">
+      <UniqueIdentifier>{3991f63e-fc15-4896-a0d3-2ec1fc7df758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\tests">
+      <UniqueIdentifier>{8cb6aa20-f2e4-44ac-bcde-e1b01fa338ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\tests\algo">
+      <UniqueIdentifier>{03fd2426-e55b-4e7e-aa93-c0c8e9144646}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\faux">
+      <UniqueIdentifier>{ff2b81cb-1370-4389-be42-cd6c5d246d29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\faux\windows">
+      <UniqueIdentifier>{5a95cadf-3b7d-40f3-a957-1d42fe7e6a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\faux\c">
+      <UniqueIdentifier>{13e300f3-7c2f-40d7-8f33-fbb838ce6ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\unit-tests\faux\c\stdlib">
+      <UniqueIdentifier>{0767fae9-9bc3-4a0b-af4b-7cf71e29b31e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Crc.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Endian.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Password.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\ConvertUTF.c">
+      <Filter>Source Files\Common\util\unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\strcmpw.c">
+      <Filter>Source Files\Common\util\unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\cursor.c">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\errors.cpp">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\userperms.cpp">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\volume\volutil.cpp">
+      <Filter>Source Files\Common\volume</Filter>
+    </ClCompile>
+    <ClCompile Include="unittesting.cpp">
+      <Filter>Source Files\unit-tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\algo\crcTest.cpp">
+      <Filter>Source Files\unit-tests\tests\algo</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\algo\endianTest.cpp">
+      <Filter>Source Files\unit-tests\tests\algo</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\algo\passwordTest.cpp">
+      <Filter>Source Files\unit-tests\tests\algo</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\io\headerTest.cpp">
+      <Filter>Source Files\unit-tests\tests\io</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\lib\stringUtilTest.cpp">
+      <Filter>Source Files\unit-tests\tests\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\lib\unicodeTest.cpp">
+      <Filter>Source Files\unit-tests\tests\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\_wcsicmp.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\CloseHandle.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\CreateFile.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\CreateWindowEx.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DefWindowProc.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DestroyWindow.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\DeviceIoControl.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\EnableWindow.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\FlushFileBuffers.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\FormatMessage.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetCurrentProcess.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetFileSize.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetFileTime.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetLastError.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetModuleHandle.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetProcAddress.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetSystemMetrics.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetTokenInformation.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetVersionEx.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetWindowText.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\GetWindowTextLength.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\IsUserAnAdmin.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\IsWellKnownSid.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\LoadCursor.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\LocalFree.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\MessageBox.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\OpenProcessToken.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\OutputDebugString.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\QueryDosDevice.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\RegisterClassEx.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\RegOpenKeyEx.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetCursor.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetFilePointer.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetFileTime.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetLastError.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\SetLayeredWindowAttributes.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\ShellNotifyIcon.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\ShowWindow.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\swprintf_s.cpp">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\windows\UnregisterClass.c">
+      <Filter>Source Files\unit-tests\faux\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="faux\ciphershed\wip.cpp">
+      <Filter>Source Files\unit-tests\faux\ciphershed</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\constants.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Crc.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Endian.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Password.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tcdefs.h">
+      <Filter>Header Files\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\types\password.h">
+      <Filter>Header Files\Common\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\util\unicode\ConvertUTF.h">
+      <Filter>Header Files\Common\util\unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\util\unicode\strcmpw.h">
+      <Filter>Header Files\Common\util\unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\cursor.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\errors.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\userperms.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="unittesting.h">
+      <Filter>Header Files\unit-tests</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ACCESSTYPES.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ARRAYSIZE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ATOM.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\BOOL.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\BOOLEAN.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\BYTE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CALLBACK.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CHAR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CloseHandle.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CONST.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CreateFile.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\CreateWindowEx.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DECLARE_HANDLE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DefWindowProc.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DestroyWindow.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DEVICE_TYPE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DeviceIoControl.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DISK_GEOMETRY.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\DWORD.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\EnableWindow.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ERROR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FAR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FILE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FILETIME.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FlushFileBuffers.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FormatMessage.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\FPO_DATA.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetCurrentProcess.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetFileSize.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetFileTime.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetLastError.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetModuleHandle.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetProcAddress.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetSystemMetrics.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetTokenInformation.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetVersionEx.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetWindowText.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GetWindowTextLength.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\GUID.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HANDLE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HBITMAP.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HBRUSH.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HCURSOR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HDC.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HFILE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HFONT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HICON.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HINSTANCE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\HWND.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\IDC_x.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\IMAGE_HEADERS.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\IOCTL_DISK.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\IsUserAnAdmin.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\IsWellKnownSid.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\lang.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LARGE_INTEGER.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LIST_ENTRY.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LoadCursor.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LONG.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LONG_PTR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LPARAM.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LPWSTR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\LRESULT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\MAKEINTRESOURCE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\MAX_PATH.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\MEDIA_TYPE.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\MessageBox.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NEAR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NIF.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NIIF.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NIM.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NOTIFYICON.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\NULL.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\OpenProcessToken.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\OSVERSIONINFOEX.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\OUT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\OVERLAPPED.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\PARTITION_INFORMATION.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\POINT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\RegisterClassEx.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\RegOpenKeyEx.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SECURITY_ATTRIBUTES.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SetCursor.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SetFilePointer.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SetFileTime.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SetLastError.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SetLayeredWindowAttributes.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ShellNotifyIcon.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SHORT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ShowWindow.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\SID_AND_ATTRIBUTES.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\stdcall.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\TOKEN_INFORMATION_CLASS.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\TOKEN_USER.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\UINT.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\UINT_PTR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\UnregisterClass.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\VOID.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WCHAR.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WINAPI.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WM_APP.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WNDCLASSEX.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WNDPROC.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WORD.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\WPARAM.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\windows\ZeroMemory.h">
+      <Filter>Header Files\unit-tests\faux\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="faux\c\stdlib\size_t.h">
+      <Filter>Header Files\unit-tests\faux\c\stdlib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="AuthoringTests.txt" />
+  </ItemGroup>
+</Project>

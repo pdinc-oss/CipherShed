@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7c9733d9-3e1a-4ea5-9266-e6dac3ea9ea5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common">
+      <UniqueIdentifier>{564cb4cc-5b71-46a4-8f23-e933e3829ecd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\dialog">
+      <UniqueIdentifier>{a9f52ea4-6d39-43ac-ab8d-dd88025a74c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\util">
+      <UniqueIdentifier>{b7cfe38f-b370-4a47-9ec3-f39966b02a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\util\unicode">
+      <UniqueIdentifier>{de3549d2-3ba6-4bb5-bbb5-f50e5b7c0921}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\volume">
+      <UniqueIdentifier>{651b211e-0173-4c4c-bdee-ac207a586584}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Common\fsutil">
+      <UniqueIdentifier>{c94b5176-73c6-45b8-b9c9-f6d0e42636b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6b290a15-a426-4536-832c-7101b00cb1b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Common">
+      <UniqueIdentifier>{d3d83171-f1f2-420a-b8c6-993560402a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{38f0090f-f319-49c1-995b-8dddb0919a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common">
+      <UniqueIdentifier>{cfa001ac-0a76-4c9f-a326-01e7f2bbfdab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\util">
+      <UniqueIdentifier>{33d39b83-343b-4bf2-ae12-070715cbb219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\util\unicode">
+      <UniqueIdentifier>{38fc1d19-6c1f-4afe-820a-da2bd861cff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\dialog">
+      <UniqueIdentifier>{fc82922a-f7cb-4e72-ae8e-44ca94751362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\volume">
+      <UniqueIdentifier>{d7e081e4-b2fb-4463-8be8-f2ace644e47d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Common\fsutil">
+      <UniqueIdentifier>{2d295575-8c35-498f-bd22-183ba68137c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\afxres.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BaseCom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Crc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Crypto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Dictionary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Dlgcode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\EncryptionThreadPool.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Endian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Exception.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Fat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Format.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GfMul.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Keyfiles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Language.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Pkcs5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Progress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Registry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SecurityToken.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\snprintf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tcdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Volumes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Wipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xml.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Xts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mount\Mount.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Format\FormatCom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Format\InPlace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Format\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Format\Tcformat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\cursor.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\errors.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\dialog\userperms.h">
+      <Filter>Header Files\Common\dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\util\csstringutil.h">
+      <Filter>Header Files\Common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\util\unicode\strcmpw.h">
+      <Filter>Header Files\Common\util\unicode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\volume\volutil.h">
+      <Filter>Header Files\Common\volume</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\fsutil\diskutil.h">
+      <Filter>Header Files\Common\fsutil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\fsutil\fsutil.h">
+      <Filter>Header Files\Common\fsutil</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\Format\Format.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\Format\Format.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\Common\Common.rc">
+      <Filter>Resource Files\Common</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Common\CipherShed_Volume.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Format\CipherShed_Wizard.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Common\CipherShed.ico">
+      <Filter>Resource Files\Common</Filter>
+    </Image>
+    <Image Include="..\Common\Textual_logo_288dpi.bmp">
+      <Filter>Resource Files\Common</Filter>
+    </Image>
+    <Image Include="..\Common\Textual_logo_96dpi.bmp">
+      <Filter>Resource Files\Common</Filter>
+    </Image>
+    <Image Include="..\Common\Textual_logo_background.bmp">
+      <Filter>Resource Files\Common</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Format\Format.tlb">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release\Decompressor.com">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_AES\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_AES\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_Serpent\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_Serpent\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_Twofish\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Release_Twofish\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_AES\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_AES\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_Serpent\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_Serpent\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_Twofish\BootLoader.com.gz">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Boot\Windows\Rescue_Twofish\BootSector.bin">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+    <None Include="..\Resources\Texts\License.rtf">
+      <Filter>Resource Files\Common</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\Common\Language.xml">
+      <Filter>Resource Files\Common</Filter>
+    </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Format\FormatCom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Format\InPlace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BaseCom.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BootEncryption.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Cmdline.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Combo.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Crc.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Crypto.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dictionary.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Dlgcode.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\EncryptionThreadPool.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Endian.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Fat.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Format.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GfMul.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Keyfiles.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Language.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Password.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Pkcs5.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Progress.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Random.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Registry.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SecurityToken.cpp">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tests.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Volumes.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Wipe.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xml.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Xts.c">
+      <Filter>Source Files\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\csstringutil.cpp">
+      <Filter>Source Files\Common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\memory.cpp">
+      <Filter>Source Files\Common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\process.cpp">
+      <Filter>Source Files\Common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\ConvertUTF.c">
+      <Filter>Source Files\Common\util\unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\util\unicode\strcmpw.c">
+      <Filter>Source Files\Common\util\unicode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\cursor.c">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\errors.cpp">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\dialog\userperms.cpp">
+      <Filter>Source Files\Common\dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\volume\volutil.cpp">
+      <Filter>Source Files\Common\volume</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\fsutil\diskutil.cpp">
+      <Filter>Source Files\Common\fsutil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\fsutil\fsutil.cpp">
+      <Filter>Source Files\Common\fsutil</Filter>
+    </ClCompile>
+    <ClCompile Include="fn-format.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="..\Format\FormatCom.idl">
+      <Filter>Source Files</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
